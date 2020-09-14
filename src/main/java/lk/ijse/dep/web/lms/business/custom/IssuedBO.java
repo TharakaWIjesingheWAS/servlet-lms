@@ -15,4 +15,5 @@ public interface IssuedBO extends SuperBO {
 
     String getNewIssueId() throws Exception;
 
+    boolean isIssueExit(String id) throws Exception;
 }

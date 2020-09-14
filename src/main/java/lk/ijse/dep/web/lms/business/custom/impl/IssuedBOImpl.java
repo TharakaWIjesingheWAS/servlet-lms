@@ -61,4 +61,9 @@ public class IssuedBOImpl implements IssuedBO {
             return id;
         }
     }
+
+    @Override
+    public boolean isIssueExit(String id) throws Exception {
+        return issuedRepository.findById(id).isPresent();
+    }
 }
