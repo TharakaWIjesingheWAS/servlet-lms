@@ -20,10 +20,13 @@ public class Issue implements SuperEntity {
     @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
     @JoinColumn(name = "memberId",referencedColumnName = "id",nullable = false)
     private Member member;
+    private String detail;
 
-    public Issue(String id, Date date, Member member) {
+    public Issue(String id, Date date, String detail) {
         this.id = id;
         this.date = date;
-        this.member = member;
+        this.detail = detail;
     }
+
+
 }
