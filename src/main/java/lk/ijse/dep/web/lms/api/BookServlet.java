@@ -117,7 +117,7 @@ public class BookServlet extends HttpServlet {
         }
         resp.setContentType("text/plain");
         try (PrintWriter writer = resp.getWriter()){
-            if (bookBO.isBookExit(id)){
+            if (!bookBO.isBookExit(id)){
                 resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
                 return;
             }

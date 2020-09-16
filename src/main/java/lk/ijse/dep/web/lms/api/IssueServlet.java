@@ -113,7 +113,7 @@ public class IssueServlet extends HttpServlet {
         }
         resp.setContentType("text/plain");
         try (PrintWriter writer = resp.getWriter()){
-            if (issuedBO.isIssueExit(id)){
+            if (!issuedBO.isIssueExit(id)){
                 resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
                 return;
             }

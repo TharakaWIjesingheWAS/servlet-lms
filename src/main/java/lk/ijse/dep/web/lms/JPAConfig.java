@@ -32,11 +32,11 @@ public class JPAConfig {
 
     @Bean
     public static PersistenceExceptionTranslationPostProcessor persistenceExceptionTranslationPostProcessor(){
-        return persistenceExceptionTranslationPostProcessor();
+        return new PersistenceExceptionTranslationPostProcessor();
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(DataSource ds){
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds){
         LocalContainerEntityManagerFactoryBean lcemfb = new LocalContainerEntityManagerFactoryBean();
         lcemfb.setDataSource(ds);
         lcemfb.setJpaVendorAdapter(JpaVendorAdapter());

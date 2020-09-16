@@ -115,7 +115,7 @@ public class MemberServlet extends HttpServlet {
         }
         resp.setContentType("text/plain");
         try (PrintWriter writer = resp.getWriter()){
-            if (memberBO.isMemberExit(id)){
+            if (!memberBO.isMemberExit(id)){
                 resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
                 return;
             }
